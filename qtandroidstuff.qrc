@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/qtandroidstuff/qml">
+        <file>AppBarButton.qml</file>
+        <file>FloatingActionButton.qml</file>
+    </qresource>
+</RCC>
