@@ -6,7 +6,12 @@
 
 namespace QtAndroidStuff
 {
+void registerQmlSingleton();
+
 double loadResolution(QQmlEngine *engine);
+
+void showToast(const QString &message, bool showLong = false);
+void hapticFeedback();
 }
 
 #endif // QTANDROIDSTUFF_H
