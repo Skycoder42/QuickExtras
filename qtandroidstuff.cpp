@@ -24,7 +24,7 @@ double QtAndroidStuff::loadResolution(QQmlEngine *engine)
 	display.callMethod<void>("getMetrics", "(Landroid/util/DisplayMetrics;)V", metrics.object());
 	dpi = (double) metrics.getField<jfloat>("density");
 #else
-	dpi = 1.0;//TODO add windows code and move to utils
+	dpi = 1.0;
 #endif
 	if(dpi >= 4.0)
 		selector->setExtraSelectors({"xxxhdpi"});
