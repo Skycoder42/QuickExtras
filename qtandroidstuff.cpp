@@ -2,6 +2,8 @@
 #include "qtandroidstuff.h"
 
 #include <QQmlFileSelector>
+#include <QFileSelector>
+#include <QDebug>
 #ifdef Q_OS_ANDROID
 #include <QtAndroidExtras>
 #endif
@@ -38,7 +40,6 @@ double QtAndroidStuff::loadResolution(QQmlEngine *engine)
 		selector->setExtraSelectors({"mdpi"});
 	else
 		selector->setExtraSelectors({"ldpi"});
-
 	return dpi;
 }
 
@@ -59,7 +60,7 @@ void QtAndroidStuff::showToast(const QString &message, bool showLong)
 	});
 #else
 	Q_UNUSED(showLong)
-	qInfo(qPrintable(message));
+	qInfo() << message;
 #endif
 }
 
