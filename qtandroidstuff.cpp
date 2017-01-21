@@ -13,6 +13,7 @@ static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 void QtAndroidStuff::registerQmlSingleton()
 {
 	qmlRegisterSingletonType<QmlSingleton>("com.skycoder42.androidstuff", 1, 0, "QtAndroidStuff", createQmlSingleton);
+	qmlProtectModule("com.skycoder42.androidstuff", 1);
 }
 
 double QtAndroidStuff::loadResolution(QQmlEngine *engine)
