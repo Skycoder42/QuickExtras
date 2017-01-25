@@ -7,18 +7,17 @@ Dialog {
 	id: alertDialog
 	x: parent ? (parent.width - width) / 2 : 0
 	y: parent ? deltaY() : 0
-	implicitWidth: parent ? Math.min(300, parent.width - 56) : 300
+	implicitWidth: parent ? Math.min(300, parent.width - 28) : 300
 	modal: true
 	focus: true
 	closePolicy: Popup.CloseOnEscape
 
+	property real extraHeight: 0
+
 	function deltaY() {
 		var unscaled = Qt.inputMethod.keyboardRectangle.height / QuickExtras.scaleFactor;
-		var availHeight = parent.height - unscaled - 28;//spacing
-		if(parent.header)
-			availHeight += parent.header.height;
-		if(parent.footer)
-			availHeight += parent.footer.height;
-		return (Math.max(0, availHeight - height) / 2) + 14;
+		var availHeight = (parent.height + extraHeight) - unscaled - 28;//spacing
+		var rawDelta = (Math.max(0, availHeight - height) / 2);
+		return rawDelta + 14 - extraHeight;//spacing
 	}
 }
