@@ -1,5 +1,5 @@
 #include "qmlsingleton.h"
-#include "qtandroidstuff.h"
+#include "quickextras.h"
 #include <QGuiApplication>
 #include <QScreen>
 
@@ -14,10 +14,10 @@ double QmlSingleton::scaleFactor() const
 
 void QmlSingleton::showToast(const QString &message, bool showLong)
 {
-	QtAndroidStuff::showToast(message, showLong);
+	QuickExtras::showToast(message, showLong);
 }
 
 void QmlSingleton::hapticFeedback()
 {
-	QtAndroidStuff::hapticFeedback();
+	QuickExtras::hapticFeedback();
 }

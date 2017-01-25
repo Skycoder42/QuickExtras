@@ -1,5 +1,5 @@
 #include "qmlsingleton.h"
-#include "qtandroidstuff.h"
+#include "quickextras.h"
 #include "svgimageprovider.h"
 
 #include <QQmlFileSelector>
@@ -13,13 +13,13 @@
 
 static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
-void QtAndroidStuff::registerQmlSingleton()
+void QuickExtras::registerQmlSingleton()
 {
-	qmlRegisterSingletonType<QmlSingleton>("com.skycoder42.androidstuff", 1, 0, "QtAndroidStuff", createQmlSingleton);
-	qmlProtectModule("com.skycoder42.androidstuff", 1);
+	qmlRegisterSingletonType<QmlSingleton>("com.skycoder42.quickextras", 1, 0, "QuickExtras", createQmlSingleton);
+	qmlProtectModule("com.skycoder42.quickextras", 1);
 }
 
-void QtAndroidStuff::setupEngine(QQmlEngine *engine)
+void QuickExtras::setupEngine(QQmlEngine *engine)
 {
 	auto dpi = QGuiApplication::primaryScreen()->devicePixelRatio();
 	qDebug() << "Application DPI factor is:" << dpi;
@@ -40,7 +40,7 @@ void QtAndroidStuff::setupEngine(QQmlEngine *engine)
 	engine->addImageProvider(QStringLiteral("svg"), new SvgImageProvider());
 }
 
-void QtAndroidStuff::showToast(const QString &message, bool showLong)
+void QuickExtras::showToast(const QString &message, bool showLong)
 {
 #ifdef Q_OS_ANDROID
 	QtAndroid::runOnAndroidThread([=](){
@@ -61,7 +61,7 @@ void QtAndroidStuff::showToast(const QString &message, bool showLong)
 #endif
 }
 
-void QtAndroidStuff::hapticFeedback()
+void QuickExtras::hapticFeedback()
 {
 #ifdef Q_OS_ANDROID
 	QtAndroid::runOnAndroidThread([=](){

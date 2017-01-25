@@ -3,7 +3,7 @@
 #include <QSvgRenderer>
 #include <QGuiApplication>
 #include <QScreen>
-#include "qtandroidstuff.h"
+#include "quickextras.h"
 
 SvgImageProvider::SvgImageProvider() :
 	QQuickImageProvider(Image)

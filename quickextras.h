@@ -4,11 +4,12 @@
 #include <QQmlEngine>
 
 
-namespace QtAndroidStuff
+namespace QuickExtras
 {
 void registerQmlSingleton();
 void setupEngine(QQmlEngine *engine);
 
+//Android specific
 void showToast(const QString &message, bool showLong = false);
 void hapticFeedback();
 }

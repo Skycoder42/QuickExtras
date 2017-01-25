@@ -2,16 +2,16 @@ android: QT *= androidextras
 QT *= svg
 
 RESOURCES += \
-	$$PWD/qtandroidstuff.qrc
+    $$PWD/quickextras.qrc
 
 HEADERS += \
-	$$PWD/qtandroidstuff.h \
 	$$PWD/qmlsingleton.h \
-	$$PWD/svgimageprovider.h
+	$$PWD/svgimageprovider.h \
+    $$PWD/quickextras.h
 
 SOURCES += \
-	$$PWD/qtandroidstuff.cpp \
 	$$PWD/qmlsingleton.cpp \
-	$$PWD/svgimageprovider.cpp
+	$$PWD/svgimageprovider.cpp \
+    $$PWD/quickextras.cpp
 
 INCLUDEPATH += $$PWD

@@ -1,7 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtQuick.Window 2.2
-import com.skycoder42.androidstuff 1.0
+import com.skycoder42.quickextras 1.0
 
 Dialog {
 	id: alertDialog
@@ -13,7 +13,7 @@ Dialog {
 	closePolicy: Popup.CloseOnEscape
 
 	function deltaY() {
-		var unscaled = Qt.inputMethod.keyboardRectangle.height / QtAndroidStuff.scaleFactor;
+		var unscaled = Qt.inputMethod.keyboardRectangle.height / QuickExtras.scaleFactor;
 		var availHeight = parent.height - unscaled - 28;//spacing
 		if(parent.header)
 			availHeight += parent.header.height;

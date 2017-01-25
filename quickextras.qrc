@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/qtandroidstuff/qml">
+    <qresource prefix="/quickextras/qml">
         <file>AppBarButton.qml</file>
         <file>FloatingActionButton.qml</file>
         <file>AlertDialog.qml</file>
