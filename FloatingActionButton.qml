@@ -30,8 +30,6 @@ RoundButton {
 			fillMode: Image.PreserveAspectFit
 			horizontalAlignment: Image.AlignHCenter
 			verticalAlignment: Image.AlignVCenter
-			sourceSize.width: 24 * QtAndroidStuff.scaleFactor
-			sourceSize.height: 24 * QtAndroidStuff.scaleFactor
 			width: 24
 			height: 24
 		}

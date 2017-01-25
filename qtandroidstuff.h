@@ -9,8 +9,6 @@ namespace QtAndroidStuff
 void registerQmlSingleton();
 void setupEngine(QQmlEngine *engine);
 
-double scaleFactor();
-
 void showToast(const QString &message, bool showLong = false);
 void hapticFeedback();
 }
