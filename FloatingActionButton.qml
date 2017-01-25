@@ -2,6 +2,7 @@ import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.1
+import com.skycoder42.androidstuff 1.0
 
 RoundButton {
 	id: fab
@@ -29,6 +30,8 @@ RoundButton {
 			fillMode: Image.PreserveAspectFit
 			horizontalAlignment: Image.AlignHCenter
 			verticalAlignment: Image.AlignVCenter
+			sourceSize.width: 24 * QtAndroidStuff.scaleFactor
+			sourceSize.height: 24 * QtAndroidStuff.scaleFactor
 			width: 24
 			height: 24
 		}

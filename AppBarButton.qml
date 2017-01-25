@@ -2,15 +2,16 @@ import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.1
+import com.skycoder42.androidstuff 1.0
 
 ToolButton {
 	id: toolButton
-    implicitHeight: toolButton.size
+	implicitHeight: toolButton.size
 	implicitWidth: toolButton.size
-    opacity: enabled ? 1.0 : 0.5
+	opacity: enabled ? 1.0 : 0.5
 
 	property alias imageSource: image.source
-    property double size: 56.0
+	property double size: 56.0
 
 	QtObject {
 		id: p
@@ -20,8 +21,8 @@ ToolButton {
 
 	contentItem: Item {
 		id: imageWrapper
-        implicitHeight: toolButton.size
-        implicitWidth: toolButton.size
+		implicitHeight: toolButton.size
+		implicitWidth: toolButton.size
 
 		Image {
 			id: image
@@ -29,6 +30,8 @@ ToolButton {
 			fillMode: Image.PreserveAspectFit
 			horizontalAlignment: Image.AlignHCenter
 			verticalAlignment: Image.AlignVCenter
+			sourceSize.width: 24 * QtAndroidStuff.scaleFactor
+			sourceSize.height: 24 * QtAndroidStuff.scaleFactor
 			width: 24
 			height: 24
 		}

@@ -16,9 +16,8 @@ void QtAndroidStuff::registerQmlSingleton()
 	qmlProtectModule("com.skycoder42.androidstuff", 1);
 }
 
-double QtAndroidStuff::loadResolution(QQmlEngine *engine)
+double QtAndroidStuff::scaleFactor()
 {
-	QQmlFileSelector *selector = QQmlFileSelector::get(engine);
 	double dpi = 0.0;
 #ifdef Q_OS_ANDROID
 	QAndroidJniObject metrics("android/util/DisplayMetrics");
@@ -29,18 +28,6 @@ double QtAndroidStuff::loadResolution(QQmlEngine *engine)
 #else
 	dpi = 1.0;
 #endif
-	if(dpi >= 4.0)
-		selector->setExtraSelectors({"xxxhdpi"});
-	else if(dpi >= 3.0)
-		selector->setExtraSelectors({"xxhdpi"});
-	else if(dpi >= 2.0)
-		selector->setExtraSelectors({"xhdpi"});
-	else if(dpi >= 1.5)
-		selector->setExtraSelectors({"hdpi"});
-	else if(dpi >= 1.0)
-		selector->setExtraSelectors({"mdpi"});
-	else
-		selector->setExtraSelectors({"ldpi"});
 	return dpi;
 }
 
@@ -87,4 +74,23 @@ static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
 	Q_UNUSED(qmlEngine)
 	Q_UNUSED(jsEngine)
 	return new QmlSingleton();
+}
+
+void QtAndroidStuff::setupEngine(QQmlEngine *engine)
+{
+	auto dpi = scaleFactor();
+	qDebug() << "Application DPI factor is:" << dpi;
+	QQmlFileSelector *selector = QQmlFileSelector::get(engine);
+	if(dpi >= 4.0)
+		selector->setExtraSelectors({"xxxhdpi"});
+	else if(dpi >= 3.0)
+		selector->setExtraSelectors({"xxhdpi"});
+	else if(dpi >= 2.0)
+		selector->setExtraSelectors({"xhdpi"});
+	else if(dpi >= 1.5)
+		selector->setExtraSelectors({"hdpi"});
+	else if(dpi >= 1.0)
+		selector->setExtraSelectors({"mdpi"});
+	else
+		selector->setExtraSelectors({"ldpi"});
 }
