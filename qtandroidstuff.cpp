@@ -3,6 +3,8 @@
 
 #include <QQmlFileSelector>
 #include <QFileSelector>
+#include <QGuiApplication>
+#include <QScreen>
 #include <QDebug>
 #ifdef Q_OS_ANDROID
 #include <QtAndroidExtras>
@@ -14,21 +16,6 @@ void QtAndroidStuff::registerQmlSingleton()
 {
 	qmlRegisterSingletonType<QmlSingleton>("com.skycoder42.androidstuff", 1, 0, "QtAndroidStuff", createQmlSingleton);
 	qmlProtectModule("com.skycoder42.androidstuff", 1);
-}
-
-double QtAndroidStuff::scaleFactor()
-{
-	double dpi = 0.0;
-#ifdef Q_OS_ANDROID
-	QAndroidJniObject metrics("android/util/DisplayMetrics");
-	QAndroidJniObject windowManager = QtAndroid::androidActivity().callObjectMethod("getWindowManager", "()Landroid/view/WindowManager;");
-	QAndroidJniObject display = windowManager.callObjectMethod("getDefaultDisplay", "()Landroid/view/Display;");
-	display.callMethod<void>("getMetrics", "(Landroid/util/DisplayMetrics;)V", metrics.object());
-	dpi = (double) metrics.getField<jfloat>("density");
-#else
-	dpi = 1.0;
-#endif
-	return dpi;
 }
 
 void QtAndroidStuff::showToast(const QString &message, bool showLong)
@@ -78,7 +65,7 @@ static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
 
 void QtAndroidStuff::setupEngine(QQmlEngine *engine)
 {
-	auto dpi = scaleFactor();
+	auto dpi = QGuiApplication::primaryScreen()->devicePixelRatio();
 	qDebug() << "Application DPI factor is:" << dpi;
 	QQmlFileSelector *selector = QQmlFileSelector::get(engine);
 	if(dpi >= 4.0)

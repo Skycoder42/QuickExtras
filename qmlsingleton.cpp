@@ -1,5 +1,7 @@
 #include "qmlsingleton.h"
 #include "qtandroidstuff.h"
+#include <QGuiApplication>
+#include <QScreen>
 
 QmlSingleton::QmlSingleton(QObject *parent) :
 	QObject(parent)
@@ -7,7 +9,7 @@ QmlSingleton::QmlSingleton(QObject *parent) :
 
 double QmlSingleton::scaleFactor() const
 {
-	return QtAndroidStuff::scaleFactor();
+	return QGuiApplication::primaryScreen()->devicePixelRatio();
 }
 
 void QmlSingleton::showToast(const QString &message, bool showLong)
