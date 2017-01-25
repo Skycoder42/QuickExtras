@@ -1,2 +1,2 @@
-# QtAndroidStuff
-Some useful stuff for using android with Qt
+# QuickExtras
+Additional Stuff for Qt Quick, with mobile support (Android)
