@@ -44,13 +44,13 @@ void QuickExtras::showToast(const QString &message, bool showLong)
 {
 #ifdef Q_OS_ANDROID
 	QtAndroid::runOnAndroidThread([=](){
-		auto activity = QtAndroid::androidActivity();
+		auto context = QtAndroid::androidContext();
 		const auto LENGTH_LONG = QAndroidJniObject::getStaticField<jint>("android/widget/Toast", "LENGTH_LONG");
 		const auto LENGTH_SHORT = QAndroidJniObject::getStaticField<jint>("android/widget/Toast", "LENGTH_SHORT");
 		auto toast = QAndroidJniObject::callStaticObjectMethod("android/widget/Toast",
 															   "makeText",
 															   "(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",
-															   activity.object(),
+															   context.object(),
 															   QAndroidJniObject::fromString(message).object(),
 															   showLong ? LENGTH_LONG : LENGTH_SHORT);
 		toast.callMethod<void>("show");
