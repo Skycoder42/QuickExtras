@@ -1,6 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
+import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.1
 
 ToolButton {
@@ -9,7 +10,8 @@ ToolButton {
 	implicitWidth: toolButton.size
 	opacity: enabled ? 1.0 : 0.5
 
-	property alias imageSource: image.source
+	property alias imageSource: tintIcon.source
+	property alias tintColor: tintIcon.tintColor
 	property double size: 56.0
 
 	QtObject {
@@ -18,20 +20,10 @@ ToolButton {
 		property bool toolTipVisible: false
 	}
 
-	contentItem: Item {
-		id: imageWrapper
+	contentItem: TintIcon {
+		id: tintIcon
 		implicitHeight: toolButton.size
 		implicitWidth: toolButton.size
-
-		Image {
-			id: image
-			anchors.centerIn: parent
-			fillMode: Image.PreserveAspectFit
-			horizontalAlignment: Image.AlignHCenter
-			verticalAlignment: Image.AlignVCenter
-			width: 24
-			height: 24
-		}
 	}
 
 	ToolTip {

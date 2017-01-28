@@ -3,5 +3,12 @@
         <file>AppBarButton.qml</file>
         <file>FloatingActionButton.qml</file>
         <file>AlertDialog.qml</file>
+        <file>ActionBar.qml</file>
+        <file>TintIcon.qml</file>
+    </qresource>
+    <qresource prefix="/quickextras/icons">
+        <file alias="ic_arrow_back.svg">icons/ic_arrow_back_white_24px.svg</file>
+        <file alias="ic_menu.svg">icons/ic_menu_white_24px.svg</file>
+        <file alias="ic_more_vert.svg">icons/ic_more_vert_white_24px.svg</file>
     </qresource>
 </RCC>

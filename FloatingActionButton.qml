@@ -9,7 +9,8 @@ RoundButton {
 	width: fab.size
 	highlighted: true
 
-	property alias imageSource: image.source
+	property alias imageSource: tintIcon.source
+	property alias tintColor: tintIcon.tintColor
 	property double size: 56.0
 
 	QtObject {
@@ -18,20 +19,10 @@ RoundButton {
 		property bool toolTipVisible: false
 	}
 
-	contentItem: Item {
-		id: imageWrapper
+	contentItem: TintIcon {
+		id: tintIcon
 		implicitHeight: fab.size
 		implicitWidth: fab.size
-
-		Image {
-			id: image
-			anchors.centerIn: parent
-			fillMode: Image.PreserveAspectFit
-			horizontalAlignment: Image.AlignHCenter
-			verticalAlignment: Image.AlignVCenter
-			width: 24
-			height: 24
-		}
 	}
 
 	ToolTip {
