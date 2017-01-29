@@ -7,7 +7,7 @@ Dialog {
 	id: alertDialog
 	x: parent ? (parent.width - width) / 2 : 0
 	y: parent ? deltaY() : 0
-	width: parent ? Math.min(implicitWidth, parent.width - 28) : implicitWidth
+	width: parent ? Math.min(Math.max(implicitWidth, 300), parent.width - 28) : implicitWidth
 	modal: true
 	focus: true
 	closePolicy: Popup.CloseOnEscape

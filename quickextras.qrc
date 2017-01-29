@@ -5,6 +5,7 @@
         <file>AlertDialog.qml</file>
         <file>ActionBar.qml</file>
         <file>TintIcon.qml</file>
+        <file>DoubleSpinBox.qml</file>
     </qresource>
     <qresource prefix="/quickextras/icons">
         <file alias="ic_arrow_back.svg">icons/ic_arrow_back_white_24px.svg</file>
