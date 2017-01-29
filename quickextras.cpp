@@ -16,6 +16,12 @@ static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 void QuickExtras::registerQmlSingleton()
 {
 	qmlRegisterSingletonType<QmlSingleton>("com.skycoder42.quickextras", 1, 0, "QuickExtras", createQmlSingleton);
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/TintIcon.qml"), "com.skycoder42.quickextras", 1, 0, "TintIcon");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/AppBarButton.qml"), "com.skycoder42.quickextras", 1, 0, "AppBarButton");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/FloatingActionButton.qml"), "com.skycoder42.quickextras", 1, 0, "FloatingActionButton");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/ActionBar.qml"), "com.skycoder42.quickextras", 1, 0, "ActionBar");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/AlertDialog.qml"), "com.skycoder42.quickextras", 1, 0, "AlertDialog");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/DoubleSpinBox.qml"), "com.skycoder42.quickextras", 1, 0, "DoubleSpinBox");
 	qmlProtectModule("com.skycoder42.quickextras", 1);
 }
 
