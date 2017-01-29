@@ -3,6 +3,7 @@ import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.1
+import com.skycoder42.quickextras 1.0
 
 ToolButton {
 	id: toolButton
@@ -33,7 +34,10 @@ ToolButton {
 		text: toolButton.text
 	}
 
-	onPressAndHold: p.toolTipVisible = true
+	onPressAndHold: {
+		QuickExtras.hapticFeedback();
+		p.toolTipVisible = true;
+	}
 	onCanceled: p.toolTipVisible = false
 	onReleased: p.toolTipVisible = false
 }

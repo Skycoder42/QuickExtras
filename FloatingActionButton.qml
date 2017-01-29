@@ -32,7 +32,10 @@ RoundButton {
 		text: fab.text
 	}
 
-	onPressAndHold: p.toolTipVisible = true
+	onPressAndHold: {
+		QuickExtras.hapticFeedback();
+		p.toolTipVisible = true;
+	}
 	onCanceled: p.toolTipVisible = false
 	onReleased: p.toolTipVisible = false
 }
