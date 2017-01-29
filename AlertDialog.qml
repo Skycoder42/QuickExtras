@@ -1,7 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtQuick.Window 2.2
-import com.skycoder42.quickextras 1.0
+import de.skycoder42.quickextras 1.0
 
 Dialog {
 	id: alertDialog
