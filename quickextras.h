@@ -6,7 +6,6 @@
 
 namespace QuickExtras
 {
-void registerQmlSingleton();
 void setupEngine(QQmlEngine *engine);
 
 //Android specific

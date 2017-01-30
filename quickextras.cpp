@@ -11,19 +11,10 @@
 #include <QtAndroidExtras>
 #endif
 
+static void registerInQml();
 static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
-void QuickExtras::registerQmlSingleton()
-{
-	qmlRegisterSingletonType<QmlSingleton>("de.skycoder42.quickextras", 1, 0, "QuickExtras", createQmlSingleton);
-	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/TintIcon.qml"), "de.skycoder42.quickextras", 1, 0, "TintIcon");
-	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/AppBarButton.qml"), "de.skycoder42.quickextras", 1, 0, "AppBarButton");
-	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/FloatingActionButton.qml"), "de.skycoder42.quickextras", 1, 0, "FloatingActionButton");
-	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/ActionBar.qml"), "de.skycoder42.quickextras", 1, 0, "ActionBar");
-	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/AlertDialog.qml"), "de.skycoder42.quickextras", 1, 0, "AlertDialog");
-	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/DoubleSpinBox.qml"), "de.skycoder42.quickextras", 1, 0, "DoubleSpinBox");
-	qmlProtectModule("de.skycoder42.quickextras", 1);
-}
+Q_COREAPP_STARTUP_FUNCTION(registerInQml)
 
 void QuickExtras::setupEngine(QQmlEngine *engine)
 {
@@ -82,6 +73,18 @@ void QuickExtras::hapticFeedback()
 								  LONG_PRESS);
 	});
 #endif
+}
+
+static void registerInQml()
+{
+	qmlRegisterSingletonType<QmlSingleton>("de.skycoder42.quickextras", 1, 0, "QuickExtras", createQmlSingleton);
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/TintIcon.qml"), "de.skycoder42.quickextras", 1, 0, "TintIcon");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/AppBarButton.qml"), "de.skycoder42.quickextras", 1, 0, "AppBarButton");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/FloatingActionButton.qml"), "de.skycoder42.quickextras", 1, 0, "FloatingActionButton");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/ActionBar.qml"), "de.skycoder42.quickextras", 1, 0, "ActionBar");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/AlertDialog.qml"), "de.skycoder42.quickextras", 1, 0, "AlertDialog");
+	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/DoubleSpinBox.qml"), "de.skycoder42.quickextras", 1, 0, "DoubleSpinBox");
+	qmlProtectModule("de.skycoder42.quickextras", 1);
 }
 
 static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
