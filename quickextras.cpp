@@ -1,4 +1,5 @@
 #include "qmlsingleton.h"
+#include "qsortfilterproxymodelqmlextension.h"
 #include "quickextras.h"
 #include "svgimageprovider.h"
 
@@ -84,6 +85,7 @@ static void registerInQml()
 	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/ActionBar.qml"), "de.skycoder42.quickextras", 1, 0, "ActionBar");
 	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/AlertDialog.qml"), "de.skycoder42.quickextras", 1, 0, "AlertDialog");
 	qmlRegisterType(QStringLiteral("qrc:/quickextras/qml/DoubleSpinBox.qml"), "de.skycoder42.quickextras", 1, 0, "DoubleSpinBox");
+	qmlRegisterExtendedType<QSortFilterProxyModel, QSortFilterProxyModelQmlExtension>("de.skycoder42.quickextras", 1, 0, "SortFilterProxyModel");
 	qmlProtectModule("de.skycoder42.quickextras", 1);
 }
 
