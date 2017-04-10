@@ -1,13 +1,5 @@
 module de.skycoder42.quickextras
 
-# dependencies
-depends QtQuick 2.8
-depends QtQuick.Controls 2.1
-depends QtQuick.Controls.Material 2.1
-depends QtQuick.Layouts 1.3
-depends QtQuick.Window 2.2
-depends QtGraphicalEffects 1.0
-
 # qml files
 TintIcon 1.0 TintIcon.qml
 AppBarButton 1.0 AppBarButton.qml
@@ -15,3 +7,5 @@ FloatingActionButton 1.0 FloatingActionButton.qml
 AlertDialog 1.0 AlertDialog.qml
 ActionBar 1.0 ActionBar.qml
 DoubleSpinBox 1.0 DoubleSpinBox.qml
+
+# c++ classes
