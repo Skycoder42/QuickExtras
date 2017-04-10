@@ -1,9 +1,6 @@
 android: QT *= androidextras
 QT *= svg
 
-RESOURCES += \
-    $$PWD/quickextras.qrc
-
 HEADERS += \
 	$$PWD/qmlsingleton.h \
 	$$PWD/svgimageprovider.h \
@@ -15,5 +12,8 @@ SOURCES += \
 	$$PWD/svgimageprovider.cpp \
     $$PWD/quickextras.cpp \
     $$PWD/qsortfilterproxymodelqmlextension.cpp
+
+RESOURCES += \
+    $$PWD/de_skycoder42_quickextras.qrc
 
 INCLUDEPATH += $$PWD
