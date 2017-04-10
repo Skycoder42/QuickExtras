@@ -3,7 +3,6 @@
 
 #include <QQmlEngine>
 
-
 namespace QuickExtras
 {
 void setupEngine(QQmlEngine *engine);

@@ -26,7 +26,6 @@ public slots:
 
 private:
 	QSortFilterProxyModel *_model;
-	Qt::SortOrder m_sortOrder;
 };
 
 #endif // QSORTFILTERPROXYMODELQMLEXTENSION_H
