@@ -17,6 +17,7 @@ public:
 	QString currentStyle() const;
 
 public slots:
+	void setStatusBarColor(const QColor &color);
 	void showToast(const QString &message, bool showLong = false);
 	void hapticFeedback();
 };

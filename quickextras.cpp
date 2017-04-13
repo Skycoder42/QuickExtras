@@ -38,6 +38,34 @@ void QuickExtras::setupEngine(QQmlEngine *engine)
 	engine->addImageProvider(QStringLiteral("svg"), new SvgImageProvider());
 }
 
+void QuickExtras::setStatusBarColor(const QColor &color)
+{
+#ifdef Q_OS_ANDROID
+	if(QtAndroid::androidSdkVersion() >= 21) {
+		QtAndroid::runOnAndroidThreadSync([=](){
+			auto activity = QtAndroid::androidActivity();
+			if(activity.isValid()) {
+				const auto FLAG_TRANSLUCENT_STATUS = QAndroidJniObject::getStaticField<jint>("android/view/WindowManager$LayoutParams",
+																							 "FLAG_TRANSLUCENT_STATUS");
+				const auto FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS = QAndroidJniObject::getStaticField<jint>("android/view/WindowManager$LayoutParams",
+																									   "FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS");
+				const auto aColor = QAndroidJniObject::callStaticMethod<jint>("android/graphics/Color",
+																			  "parseColor",
+																			  "(Ljava/lang/String;)I",
+																			  QAndroidJniObject::fromString(color.name()).object());
+
+				QAndroidJniObject window = activity.callObjectMethod("getWindow", "()Landroid/view/Window;");
+				if(window.isValid()) {
+					window.callMethod<void>("clearFlags", "(I)V", FLAG_TRANSLUCENT_STATUS);
+					window.callMethod<void>("addFlags", "(I)V", FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+					window.callMethod<void>("setStatusBarColor", "(I)V", aColor);
+				}
+			}
+		});
+	}
+#endif
+}
+
 void QuickExtras::showToast(const QString &message, bool showLong)
 {
 #ifdef Q_OS_ANDROID

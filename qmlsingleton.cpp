@@ -18,6 +18,11 @@ QString QmlSingleton::currentStyle() const
 	return QQuickStyle::name();
 }
 
+void QmlSingleton::setStatusBarColor(const QColor &color)
+{
+	QuickExtras::setStatusBarColor(color);
+}
+
 void QmlSingleton::showToast(const QString &message, bool showLong)
 {
 	QuickExtras::showToast(message, showLong);
