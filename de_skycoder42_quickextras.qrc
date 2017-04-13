@@ -1,4 +1,3 @@
-
 <RCC>
     <qresource prefix="/de/skycoder42/quickextras/icons">
         <file alias="ic_arrow_back.svg">icons/ic_arrow_back_white_24px.svg</file>
@@ -13,5 +12,6 @@
         <file>ActionBar.qml</file>
         <file>AlertDialog.qml</file>
         <file>DoubleSpinBox.qml</file>
+        <file>CommonStyle.qml</file>
     </qresource>
 </RCC>

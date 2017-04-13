@@ -9,6 +9,7 @@ depends QtQuick.Window 2.2
 depends QtGraphicalEffects 1.0
 
 # qml files
+singleton CommonStyle 1.0 CommonStyle.qml
 TintIcon 1.0 TintIcon.qml
 AppBarButton 1.0 AppBarButton.qml
 FloatingActionButton 1.0 FloatingActionButton.qml
