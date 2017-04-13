@@ -11,7 +11,7 @@ RoundButton {
 
 	property alias imageSource: tintIcon.source
 	property alias tintColor: tintIcon.tintColor
-	property double size: 56.0
+	property double size: 72.0
 
 	QtObject {
 		id: p
@@ -23,6 +23,7 @@ RoundButton {
 		id: tintIcon
 		implicitHeight: fab.size
 		implicitWidth: fab.size
+		iconSize: Qt.size(fab.size/2, fab.size/2)
 	}
 
 	ToolTip {

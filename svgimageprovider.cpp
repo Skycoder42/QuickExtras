@@ -7,9 +7,7 @@
 
 SvgImageProvider::SvgImageProvider() :
 	QQuickImageProvider(Image)
-{
-
-}
+{}
 
 QImage SvgImageProvider::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
 {

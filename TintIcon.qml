@@ -17,6 +17,7 @@ Item {
 		verticalAlignment: Image.AlignVCenter
 		width: iconSize.width
 		height: iconSize.height
+		sourceSize: iconSize
 		visible: false
 	}
 

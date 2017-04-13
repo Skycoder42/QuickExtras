@@ -80,7 +80,7 @@ static void registerInQml()
 {
 	qmlRegisterSingletonType<QmlSingleton>("de.skycoder42.quickextras", 1, 0, "QuickExtras", createQmlSingleton);
 	qmlRegisterExtendedType<QSortFilterProxyModel, QSortFilterProxyModelQmlExtension>("de.skycoder42.quickextras", 1, 0, "SortFilterProxyModel");
-	qmlProtectModule("de.skycoder42.quickextras", 1);
+	//qmlProtectModule("de.skycoder42.quickextras", 1);
 }
 
 static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine)

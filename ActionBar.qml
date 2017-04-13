@@ -21,7 +21,9 @@ ToolBar {
 
 		AppBarButton {
 			id: menuButton
-			imageSource: showMenuAsBack ? "image://svg/quickextras/icons/ic_arrow_back" : "image://svg/quickextras/icons/ic_menu"
+			imageSource: showMenuAsBack ?
+							 "image://svg/de/skycoder42/quickextras/icons/ic_arrow_back" :
+							 "image://svg/de/skycoder42/quickextras/icons/ic_menu"
 			text: showMenuAsBack ? qsTr("Go back") : qsTr("Show menu")
 
 			onClicked: menuButtonClicked()
@@ -46,7 +48,7 @@ ToolBar {
 		AppBarButton {
 			id: moreButton
 			visible: moreMenu
-			imageSource: "image://svg/quickextras/icons/ic_more_vert"
+			imageSource: "image://svg/de/skycoder42/quickextras/icons/ic_more_vert"
 			text: qsTr("More…")
 			onClicked: moreMenu.open()
 		}
