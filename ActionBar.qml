@@ -1,6 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
+import de.skycoder42.quickextras 1.0
 
 ToolBar {
 	id: toolbar
@@ -50,12 +51,55 @@ ToolBar {
 			visible: moreMenu
 			imageSource: "image://svg/de/skycoder42/quickextras/icons/ic_more_vert"
 			text: qsTr("More…")
-			onClicked: moreMenu.open()
+			checkable: true
+
+			property bool skipNext: false
+
+			onPressed: uncheckTimer.stop();
+			onReleased: skipNext = false;
+			onCanceled: skipNext = false;
+
+			onCheckedChanged: {
+				if(skipNext) {
+					skipNext = false;
+					checked = !checked;
+					return;
+				}
+
+				if(checked) {
+					if(!moreMenu.visible)
+						moreMenu.open();
+				} else {
+					if(moreMenu.visible)
+						moreMenu.close();
+				}
+			}
+
+			Connections {
+				target: moreMenu
+				onClosed: {
+					moreButton.checked = false;
+					moreButton.skipNext = true;
+					uncheckTimer.restart();
+				}
+			}
+
+			Timer {
+				id: uncheckTimer
+				interval: 100
+				repeat: false
+				running: false
+
+				onTriggered: moreButton.skipNext = false;
+			}
 		}
 	}
 
 	Component.onCompleted: {
-		if(moreMenu)
+		if(moreMenu) {
 			moreMenu.parent = moreButton;
+			if(!CommonStyle.isMaterial)
+				moreMenu.y = Qt.binding(function(){return moreButton.height});
+		}
 	}
 }

@@ -63,6 +63,8 @@ void QuickExtras::setStatusBarColor(const QColor &color)
 			}
 		});
 	}
+#else
+	Q_UNUSED(color);
 #endif
 }
 
