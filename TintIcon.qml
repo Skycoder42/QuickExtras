@@ -5,6 +5,10 @@ import de.skycoder42.quickextras 1.0
 Item {
 	id: tintIcon
 
+	CommonStyle {
+		id: style
+	}
+
 	property size iconSize: Qt.size(24, 24)
 	property alias tintColor: overlay.color
 	property alias source: image.source
@@ -25,6 +29,6 @@ Item {
 		id: overlay
 		anchors.fill: image
 		source: image
-		color: CommonStyle.foreground
+		color: style.foreground
 	}
 }

@@ -95,10 +95,14 @@ ToolBar {
 		}
 	}
 
+	CommonStyle {
+		id: style
+	}
+
 	Component.onCompleted: {
 		if(moreMenu) {
 			moreMenu.parent = moreButton;
-			if(!CommonStyle.isMaterial)
+			if(!style.isMaterial)
 				moreMenu.y = Qt.binding(function(){return moreButton.height});
 		}
 	}

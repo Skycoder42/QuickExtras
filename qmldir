@@ -1,7 +1,7 @@
 module de.skycoder42.quickextras
 
 # qml files
-singleton CommonStyle 1.0 CommonStyle.qml
+CommonStyle 1.0 CommonStyle.qml
 TintIcon 1.0 TintIcon.qml
 AppBarButton 1.0 AppBarButton.qml
 FloatingActionButton 1.0 FloatingActionButton.qml
