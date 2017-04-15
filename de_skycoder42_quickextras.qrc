@@ -13,5 +13,6 @@
         <file>AlertDialog.qml</file>
         <file>DoubleSpinBox.qml</file>
         <file>CommonStyle.qml</file>
+        <file>NavigationDrawer.qml</file>
     </qresource>
 </RCC>

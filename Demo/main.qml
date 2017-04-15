@@ -10,31 +10,10 @@ ApplicationWindow {
 	height: 480
 	title: qsTr("Quick-Extras Demo")
 
-	header: ActionBar {
-		title: root.title
+	StackView {
+		anchors.fill: parent
 
-		AppBarButton {
-			id: testButton
-			imageSource: "image://svg/de/skycoder42/quickextras/icons/ic_arrow_back"
-			text: "Click me"
-
-			onClicked: dialog.open()
-		}
-
-		moreMenu: Menu {
-			MenuItem {
-				text: qsTr("About")
-			}
-
-			MenuItem {
-				text: qsTr("Hello World")
-			}
-		}
+		initialItem: MainPage {}
 	}
 
-	AlertDialog {
-		id: dialog
-		title: "Hello Tree!"
-		standardButtons: Dialog.Ok
-	}
 }
