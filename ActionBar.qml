@@ -1,5 +1,6 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
+import QtQuick.Controls.Material 2.1
 import QtQuick.Layouts 1.3
 import de.skycoder42.quickextras 1.0
 
@@ -12,13 +13,17 @@ ToolBar {
 	property bool showMenuAsBack: false
 
 	property Menu moreMenu: null
+	property var tabBar: null //tabLoader.sourceComponent
 	default property alias actions: actionButtonsLayout.children
 
 	signal menuButtonClicked()
 
-	RowLayout {
+	GridLayout {
 		anchors.fill: parent
-		spacing: 0
+		rowSpacing: 0
+		columnSpacing: 0
+		columns: 4
+		rows: 2
 
 		AppBarButton {
 			id: menuButton
@@ -91,6 +96,22 @@ ToolBar {
 				running: false
 
 				onTriggered: moreButton.skipNext = false;
+			}
+		}
+
+		TabBar {
+			id: tabLoader
+
+			Layout.fillWidth: true
+			Layout.columnSpan: 4
+			position: TabBar.Header
+
+			Material.background: Material.primary
+			TabButton {
+				text: "Test1"
+			}
+			TabButton {
+				text: "Test2"
 			}
 		}
 	}

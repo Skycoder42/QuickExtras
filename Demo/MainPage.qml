@@ -29,6 +29,12 @@ Page {
 				onClicked: dialog.open()
 			}
 		}
+
+		tabBar: TabBar {
+			TabButton {
+				text: "Test"
+			}
+		}
 	}
 
 	NavigationDrawer {
