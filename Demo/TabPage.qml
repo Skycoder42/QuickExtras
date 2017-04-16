@@ -42,9 +42,9 @@ Page {
 		Pane {
 			id: secondPage
 
-			CheckBox {
+			Switch {
 				anchors.centerIn: parent
-				text: qsTr("Check me!")
+				text: qsTr("Switch me!")
 			}
 		}
 	}

@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>MainPage.qml</file>
         <file>TabPage.qml</file>
+        <file>qtquickcontrols2.conf</file>
     </qresource>
 </RCC>

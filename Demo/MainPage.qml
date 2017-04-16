@@ -6,6 +6,11 @@ import de.skycoder42.quickextras 1.0
 
 Page {
 	id: page
+
+	CommonStyle {
+		id: style
+	}
+
 	header: ActionBar {
 		title: qsTr("Quick-Extras Demo")
 
@@ -44,14 +49,22 @@ Page {
 				anchors.left: parent.left
 				anchors.right: parent.right
 
-				Switch {
-					text: "Option 1"
+				RadioButton {
+					text: "Material Style (-style material)"
+					checked: style.isMaterial
 				}
-				Switch {
-					text: "Option 2"
+				RadioButton {
+					text: "Universal Style (-style universal)"
+					checked: style.isUniversal
 				}
-				Switch {
-					text: "Option 3"
+				RadioButton {
+					text: "Default Style (-style default)"
+					checked: !style.isMaterial && !style.isUniversal
+				}
+				Label {
+					Layout.maximumWidth: parent.width
+					text: "Use command line switches to change the style!"
+					wrapMode: Text.Wrap
 				}
 			}
 		}
