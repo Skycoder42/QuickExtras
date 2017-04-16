@@ -11,6 +11,7 @@ ApplicationWindow {
 	title: qsTr("Quick-Extras Demo")
 
 	StackView {
+		id: stack
 		anchors.fill: parent
 
 		initialItem: MainPage {}

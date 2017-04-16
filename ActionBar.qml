@@ -14,6 +14,7 @@ ToolBar {
 
 	property Menu moreMenu: null
 	property alias tabBar: tabLoader.sourceComponent
+	property alias tabBarItem: tabLoader.item
 	default property alias actions: actionButtonsLayout.children
 
 	signal menuButtonClicked()

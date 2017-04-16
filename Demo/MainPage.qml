@@ -1,5 +1,6 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
+import QtQuick.Controls.Material 2.1
 import QtQuick.Layouts 1.0
 import de.skycoder42.quickextras 1.0
 
@@ -29,15 +30,6 @@ Page {
 				onClicked: dialog.open()
 			}
 		}
-
-		tabBar: TabBar {
-			TabButton {
-				text: "Test 1"
-			}
-			TabButton {
-				text: "Test 2"
-			}
-		}
 	}
 
 	NavigationDrawer {
@@ -62,6 +54,23 @@ Page {
 					text: "Option 3"
 				}
 			}
+		}
+	}
+
+	Pane {
+		anchors.fill: parent
+
+		FloatingActionButton {
+			id: fab
+
+			anchors.right: parent.right
+			anchors.bottom: parent.bottom
+
+			Material.foreground: "#FFFFFF"
+
+			imageSource: "image://svg/de/skycoder42/quickextras/icons/ic_menu"
+
+			onClicked: stack.push("qrc:/TabPage.qml")
 		}
 	}
 
