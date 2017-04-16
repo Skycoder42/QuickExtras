@@ -8,7 +8,7 @@ SpinBox {
 	property double dFrom: 0.0
 	property double dTo: 100.0
 	property double dValue: 0.0
-	property double dStepSize: 1.0
+	property double dStepSize: 0.1
 
 	readonly property int factor: Math.pow(10, dSpBox.decimals)
 

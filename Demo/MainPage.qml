@@ -73,6 +73,11 @@ Page {
 	Pane {
 		anchors.fill: parent
 
+		DoubleSpinBox {
+			id: dbl
+			editable: true
+		}
+
 		FloatingActionButton {
 			id: fab
 
