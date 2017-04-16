@@ -32,7 +32,10 @@ Page {
 
 		tabBar: TabBar {
 			TabButton {
-				text: "Test"
+				text: "Test 1"
+			}
+			TabButton {
+				text: "Test 2"
 			}
 		}
 	}

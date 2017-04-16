@@ -6,14 +6,14 @@ import de.skycoder42.quickextras 1.0
 
 ToolBar {
 	id: toolbar
-	implicitHeight: 56
+	implicitHeight: (tabLoader.item ? tabLoader.item.implicitHeight : 0) + 56
 
 	property alias title: titleLabel.text
 	property alias showMenuButton: menuButton.visible
 	property bool showMenuAsBack: false
 
 	property Menu moreMenu: null
-	property var tabBar: null //tabLoader.sourceComponent
+	property alias tabBar: tabLoader.sourceComponent
 	default property alias actions: actionButtonsLayout.children
 
 	signal menuButtonClicked()
@@ -99,19 +99,14 @@ ToolBar {
 			}
 		}
 
-		TabBar {
+		Loader {
 			id: tabLoader
-
 			Layout.fillWidth: true
 			Layout.columnSpan: 4
-			position: TabBar.Header
-
 			Material.background: Material.primary
-			TabButton {
-				text: "Test1"
-			}
-			TabButton {
-				text: "Test2"
+
+			onLoaded: {
+				tabLoader.item.position = TabBar.Header;
 			}
 		}
 	}
