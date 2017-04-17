@@ -1,7 +1,7 @@
 # QuickExtras
 Additional Stuff for Qt Quick Controls 2, to make it work event better
 
-> Note: The android specific stuff has been moved to [AndroidUtils](https://github.com/Skycoder42/QuickExtras)
+> Note: The android specific stuff has been moved to [AndroidUtils](https://github.com/Skycoder42/AndroidUtils)
 
 ## Features
 This package is a collection of various qml types to improve the qt quick controls 2 as well as android support
