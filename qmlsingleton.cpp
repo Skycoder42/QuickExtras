@@ -1,5 +1,4 @@
 #include "qmlsingleton.h"
-#include "quickextras.h"
 #include <QGuiApplication>
 #include <QScreen>
 #include <QQuickStyle>
@@ -16,19 +15,4 @@ double QmlSingleton::scaleFactor() const
 QString QmlSingleton::currentStyle() const
 {
 	return QQuickStyle::name();
-}
-
-void QmlSingleton::setStatusBarColor(const QColor &color)
-{
-	QuickExtras::setStatusBarColor(color);
-}
-
-void QmlSingleton::showToast(const QString &message, bool showLong)
-{
-	QuickExtras::showToast(message, showLong);
-}
-
-void QmlSingleton::hapticFeedback()
-{
-	QuickExtras::hapticFeedback();
 }

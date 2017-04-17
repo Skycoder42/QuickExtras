@@ -1,4 +1,3 @@
-android: QT *= androidextras
 QT *= quickcontrols2 svg
 
 HEADERS += \

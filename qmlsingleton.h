@@ -15,11 +15,6 @@ public:
 
 	double scaleFactor() const;
 	QString currentStyle() const;
-
-public slots:
-	void setStatusBarColor(const QColor &color);
-	void showToast(const QString &message, bool showLong = false);
-	void hapticFeedback();
 };
 
 #endif // QMLSINGLETON_H
