@@ -35,7 +35,7 @@ ToolButton {
 	}
 
 	onPressAndHold: {
-		QuickExtras.hapticFeedback();
+		QuickExtras.hapticLongPress();
 		p.toolTipVisible = true;
 	}
 	onCanceled: p.toolTipVisible = false

@@ -46,3 +46,8 @@ static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
 	Q_UNUSED(jsEngine)
 	return new QmlSingleton();
 }
+
+void QuickExtras::setHapticFeedbackProvider(const std::function<void ()> &triggerFeedback)
+{
+	QmlSingleton::hapticFeedbackProvider = triggerFeedback;
+}
