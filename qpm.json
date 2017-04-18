@@ -2,17 +2,17 @@
   "name": "de.skycoder42.quickextras",
   "description": "Additional Stuff for Qt Quick Controls 2, to make it work event better",
   "author": {
-    "name": "Skycoder",
-    "email": "skycoder42.de@gmx.de"
+	"name": "Skycoder",
+	"email": "skycoder42.de@gmx.de"
   },
   "repository": {
-    "type": "GITHUB",
-    "url": "https://github.com/Skycoder42/QuickExtras.git"
+	"type": "GITHUB",
+	"url": "https://github.com/Skycoder42/QuickExtras.git"
   },
   "version": {
-    "label": "2.0.0",
-    "revision": "",
-    "fingerprint": ""
+	"label": "2.0.1",
+	"revision": "",
+	"fingerprint": ""
   },
   "dependencies": [
   ],
