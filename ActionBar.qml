@@ -20,10 +20,11 @@ ToolBar {
 	signal menuButtonClicked()
 
 	GridLayout {
+		id: grid
 		anchors.fill: parent
 		rowSpacing: 0
 		columnSpacing: 0
-		columns: 4
+		columns: 2 + (showMenuButton ? 1 : 0) + (moreMenu ? 1 : 0)
 		rows: 2
 
 		AppBarButton {
@@ -45,6 +46,7 @@ ToolBar {
 			verticalAlignment: Qt.AlignVCenter
 			Layout.fillWidth: true
 			Layout.leftMargin: 10
+			Layout.minimumHeight: 56
 		}
 
 		RowLayout {
@@ -103,7 +105,7 @@ ToolBar {
 		Loader {
 			id: tabLoader
 			Layout.fillWidth: true
-			Layout.columnSpan: 4
+			Layout.columnSpan: grid.columns
 			Material.background: Material.primary
 
 			onLoaded: {
