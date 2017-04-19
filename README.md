@@ -29,7 +29,7 @@ The package is providet as qpm package, [`de.skycoder42.quickextras`](https://ww
 Check their [GitHub - Usage for App Developers](https://github.com/Cutehacks/qpm/blob/master/README.md#usage-for-app-developers) to learn more about qpm.
 
 ## Usage
-All the QML type ar available via the import `import de.skycoder42.quickextras 1.0`. To make use of the SVG image provider, it must be registered in the engine. This can be done by calling `QuickExtras::setupEngine(engine);` in your main. To load svg images, use `image://svg/dir_to/image`. This would load the svg image `:/dir_to/image.svg` from the resources. Have a look at the `Demo` project to see a small example of the extra controls
+All the QML type ar available via the import `import de.skycoder42.quickextras 2.0`. To make use of the SVG image provider, it must be registered in the engine. This can be done by calling `QuickExtras::setupEngine(engine);` in your main. To load svg images, use `image://svg/dir_to/image`. This would load the svg image `:/dir_to/image.svg` from the resources. Have a look at the `Demo` project to see a small example of the extra controls
 
 ### Haptic Feedback
 Since haptic feedback is device specific, it is not implemented here. The `QuickExtras.hapticLongPress()` by default does nothing, unless a feedback trigger has been set by using `QuickExtras::setHapticFeedbackProvider`. **Pro-Tip:** My [AndroidUtils package](https://github.com/Skycoder42/AndroidUtils) provides a method to trigger such feedback for android.
