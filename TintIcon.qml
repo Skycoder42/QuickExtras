@@ -1,6 +1,6 @@
 import QtQuick 2.8
 import QtGraphicalEffects 1.0
-import de.skycoder42.quickextras 1.0
+import de.skycoder42.quickextras 2.0
 
 Item {
 	id: tintIcon

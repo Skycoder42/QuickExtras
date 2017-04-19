@@ -35,9 +35,9 @@ void QuickExtras::setupEngine(QQmlEngine *engine)
 
 static void registerInQml()
 {
-	qmlRegisterSingletonType<QmlSingleton>("de.skycoder42.quickextras", 1, 0, "QuickExtras", createQmlSingleton);
-	qmlRegisterExtendedType<QSortFilterProxyModel, QSortFilterProxyModelQmlExtension>("de.skycoder42.quickextras", 1, 0, "SortFilterProxyModel");
-	//qmlProtectModule("de.skycoder42.quickextras", 1);
+	qmlRegisterSingletonType<QmlSingleton>("de.skycoder42.quickextras", 2, 0, "QuickExtras", createQmlSingleton);
+	qmlRegisterExtendedType<QSortFilterProxyModel, QSortFilterProxyModelQmlExtension>("de.skycoder42.quickextras", 2, 0, "SortFilterProxyModel");
+	//qmlProtectModule("de.skycoder42.quickextras", 2);
 }
 
 static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine)

@@ -3,7 +3,7 @@ import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.1
-import de.skycoder42.quickextras 1.0
+import de.skycoder42.quickextras 2.0
 
 ToolButton {
 	id: toolButton
