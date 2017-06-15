@@ -22,11 +22,15 @@ This package is a collection of various qml types to improve the qt quick contro
 ## Installation
 The package is providet as qpm package, [`de.skycoder42.quickextras`](https://www.qpm.io/packages/de.skycoder42.quickextras/index.html). To install:
 
-1. Install qpm (See [GitHub - Installing](https://github.com/Cutehacks/qpm/blob/master/README.md#installing))
+1. Install qpm (See [GitHub - Installing](https://github.com/Cutehacks/qpm/blob/master/README.md#installing), for **windows** see below)
 2. In your projects root directory, run `qpm install de.skycoder42.quickextras`
 3. Include qpm to your project by adding `include(vendor/vendor.pri)` to your `.pro` file
 
 Check their [GitHub - Usage for App Developers](https://github.com/Cutehacks/qpm/blob/master/README.md#usage-for-app-developers) to learn more about qpm.
+
+**Important for Windows users:** QPM Version *0.10.0* (the one you can download on the website) is currently broken on windows! It's already fixed in master, but not released yet. Until a newer versions gets released, you can download the latest dev build from here:
+- https://storage.googleapis.com/www.qpm.io/download/latest/windows_amd64/qpm.exe
+- https://storage.googleapis.com/www.qpm.io/download/latest/windows_386/qpm.exe
 
 ## Usage
 All the QML type ar available via the import `import de.skycoder42.quickextras 2.0`. To make use of the SVG image provider, it must be registered in the engine. This can be done by calling `QuickExtras::setupEngine(engine);` in your main. To load svg images, use `image://svg/dir_to/image`. This would load the svg image `:/dir_to/image.svg` from the resources. Have a look at the `Demo` project to see a small example of the extra controls
