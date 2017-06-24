@@ -1,11 +1,11 @@
 module de.skycoder42.quickextras
 
 # qml files
-CommonStyle 1.0 CommonStyle.qml
-TintIcon 1.0 TintIcon.qml
-AppBarButton 1.0 AppBarButton.qml
-NavigationDrawer 1.0 NavigationDrawer.qml
-FloatingActionButton 1.0 FloatingActionButton.qml
-AlertDialog 1.0 AlertDialog.qml
-ActionBar 1.0 ActionBar.qml
-DoubleSpinBox 1.0 DoubleSpinBox.qml
+CommonStyle 2.0 CommonStyle.qml
+TintIcon 2.0 TintIcon.qml
+AppBarButton 2.0 AppBarButton.qml
+NavigationDrawer 2.0 NavigationDrawer.qml
+FloatingActionButton 2.0 FloatingActionButton.qml
+AlertDialog 2.0 AlertDialog.qml
+ActionBar 2.0 ActionBar.qml
+DoubleSpinBox 2.0 DoubleSpinBox.qml

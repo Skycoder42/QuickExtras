@@ -2,7 +2,7 @@ import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Material 2.1
 import QtQuick.Layouts 1.3
-import de.skycoder42.quickextras 1.0
+import de.skycoder42.quickextras 2.0
 
 ToolBar {
 	id: toolbar
@@ -20,10 +20,11 @@ ToolBar {
 	signal menuButtonClicked()
 
 	GridLayout {
+		id: grid
 		anchors.fill: parent
 		rowSpacing: 0
 		columnSpacing: 0
-		columns: 4
+		columns: 2 + (showMenuButton ? 1 : 0) + (moreMenu ? 1 : 0)
 		rows: 2
 
 		AppBarButton {
@@ -45,6 +46,7 @@ ToolBar {
 			verticalAlignment: Qt.AlignVCenter
 			Layout.fillWidth: true
 			Layout.leftMargin: 10
+			Layout.minimumHeight: 56
 		}
 
 		RowLayout {
@@ -103,7 +105,7 @@ ToolBar {
 		Loader {
 			id: tabLoader
 			Layout.fillWidth: true
-			Layout.columnSpan: 4
+			Layout.columnSpan: grid.columns
 			Material.background: Material.primary
 
 			onLoaded: {

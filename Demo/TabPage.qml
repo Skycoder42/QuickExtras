@@ -1,7 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.0
-import de.skycoder42.quickextras 1.0
+import de.skycoder42.quickextras 2.0
 
 Page {
 	id: subPage
@@ -12,6 +12,7 @@ Page {
 
 		onMenuButtonClicked: stack.pop()
 		showMenuAsBack: true
+		showMenuButton: switch2.checked
 
 		tabBar: TabBar {
 			id: tabBar
@@ -34,9 +35,11 @@ Page {
 		Pane {
 			id: firstPage
 
-			Button {
+			Switch {
+				id: switch2
 				anchors.centerIn: parent
-				text: qsTr("Click me!")
+				checked: true
+				text: qsTr("Back button visible")
 			}
 		}
 		Pane {
@@ -44,7 +47,7 @@ Page {
 
 			Switch {
 				anchors.centerIn: parent
-				text: qsTr("Switch me!")
+				text: qsTr("Click me!")
 			}
 		}
 	}

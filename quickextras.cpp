@@ -35,9 +35,9 @@ void QuickExtras::setupEngine(QQmlEngine *engine)
 
 static void registerInQml()
 {
-	qmlRegisterSingletonType<QmlSingleton>("de.skycoder42.quickextras", 1, 0, "QuickExtras", createQmlSingleton);
-	qmlRegisterExtendedType<QSortFilterProxyModel, QSortFilterProxyModelQmlExtension>("de.skycoder42.quickextras", 1, 0, "SortFilterProxyModel");
-	//qmlProtectModule("de.skycoder42.quickextras", 1);
+	qmlRegisterSingletonType<QmlSingleton>("de.skycoder42.quickextras", 2, 0, "QuickExtras", createQmlSingleton);
+	qmlRegisterExtendedType<QSortFilterProxyModel, QSortFilterProxyModelQmlExtension>("de.skycoder42.quickextras", 2, 0, "SortFilterProxyModel");
+	//qmlProtectModule("de.skycoder42.quickextras", 2);
 }
 
 static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
@@ -45,4 +45,9 @@ static QObject *createQmlSingleton(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
 	Q_UNUSED(qmlEngine)
 	Q_UNUSED(jsEngine)
 	return new QmlSingleton();
+}
+
+void QuickExtras::setHapticFeedbackProvider(const std::function<void ()> &triggerFeedback)
+{
+	QmlSingleton::hapticFeedbackProvider = triggerFeedback;
 }
