@@ -4,17 +4,17 @@
 <context>
     <name>ActionBar</name>
     <message>
-        <location filename="ActionBar.qml" line="34"/>
+        <location filename="ActionBar.qml" line="35"/>
         <source>Go back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ActionBar.qml" line="34"/>
+        <location filename="ActionBar.qml" line="35"/>
         <source>Show menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ActionBar.qml" line="59"/>
+        <location filename="ActionBar.qml" line="61"/>
         <source>More…</source>
         <translation type="unfinished"></translation>
     </message>

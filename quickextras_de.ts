@@ -4,17 +4,17 @@
 <context>
     <name>ActionBar</name>
     <message>
-        <location filename="ActionBar.qml" line="34"/>
+        <location filename="ActionBar.qml" line="35"/>
         <source>Go back</source>
         <translation>Zurück</translation>
     </message>
     <message>
-        <location filename="ActionBar.qml" line="34"/>
+        <location filename="ActionBar.qml" line="35"/>
         <source>Show menu</source>
         <translation>Menü Anzeigen</translation>
     </message>
     <message>
-        <location filename="ActionBar.qml" line="59"/>
+        <location filename="ActionBar.qml" line="61"/>
         <source>More…</source>
         <translation>Mehr…</translation>
     </message>
