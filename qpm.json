@@ -15,6 +15,7 @@
     "fingerprint": ""
   },
   "dependencies": [
+    "de.skycoder42.qpm-translate@1.0.0"
   ],
   "license": "BSD_3_CLAUSE",
   "pri_filename": "de_skycoder42_quickextras.pri",

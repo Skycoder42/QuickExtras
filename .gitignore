@@ -24,6 +24,7 @@ qrc_*.cpp
 ui_*.h
 Makefile*
 *build-*
+*.qm
 
 # QtCreator
 
@@ -36,3 +37,5 @@ Makefile*
 # QtCtreator CMake
 CMakeLists.txt.user
 
+# qpm
+vendor

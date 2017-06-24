@@ -14,5 +14,8 @@ SOURCES += \
 
 RESOURCES += \
 	$$PWD/de_skycoder42_quickextras.qrc
+	
+QPM_TRANSLATIONS += $$PWD/quickextras_de.ts \
+	$$PWD/quickextras_template.ts
 
 INCLUDEPATH += $$PWD
