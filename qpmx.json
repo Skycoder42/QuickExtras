@@ -1,0 +1,28 @@
+{
+    "dependencies": [
+    ],
+    "license": {
+        "file": "LICENSE",
+        "name": "BSD_3_CLAUSE"
+    },
+    "prcFile": "de_skycoder42_quickextras.prc",
+    "priFile": "de_skycoder42_quickextras.pri",
+    "priIncludes": [
+    ],
+    "publishers": {
+        "qpm": {
+            "author": {
+                "email": "skycoder42.de@gmx.de",
+                "name": "Skycoder"
+            },
+            "description": "Additional Stuff for Qt Quick Controls 2, to make it work event better",
+            "name": "de.skycoder42.quickextras",
+            "repository": {
+                "type": "GITHUB",
+                "url": "https://github.com/Skycoder42/QuickExtras.git"
+            },
+            "webpage": "https://github.com/Skycoder42/QuickExtras"
+        }
+    },
+    "source": false
+}
